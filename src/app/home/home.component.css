@@ -1,0 +1,21 @@
+.project::after {
+	content: '';
+	display: block;
+	height: 100%;
+	width: 100%;
+    background-color: rgba(0,0,0,.1);
+}
+.project__image {
+    width: 720px;
+    height: 100%;
+    max-width: 100%;
+}
+.project__href {
+    display: flex;
+    justify-content: center;
+    line-height: 50px;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    margin: 10px;
+}
