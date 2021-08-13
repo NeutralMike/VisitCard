@@ -23,11 +23,12 @@ export class DataService {
           this.http.get(`https://raw.githubusercontent.com/${repo.full_name}/${repo.default_branch}/README.md`, {responseType: 'text'} )
             .subscribe(readme => {
               const images = readme.match(/!\[.*?\]\(.*?\)/gmi)
-                .map(imageUrl => (
+                ?.map(imageUrl => (
                   {
                     url: `https://raw.githubusercontent.com/${repo.full_name}/${repo.default_branch}/${imageUrl.match(/\(.*?\)/)[0].slice(1, -1)}`
                   }
                 ));
+              if (!images){return}
               this.projects.next([
                 ...this.projects.value,
                 {
