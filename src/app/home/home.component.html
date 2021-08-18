@@ -13,7 +13,7 @@
                 <img height="50" src="../../assets/images/github_logo.png" />
                 {{project.name}}
             </a>
-            <a [href]="project.siteUrl"></a>
+            <a *ngIf="project.siteUrl" class="project__href" [href]="project.siteUrl"><img height="50" src="../../assets/images/web.png" /></a>
         </mat-grid-list>
     </mat-grid-tile>
 </mat-grid-list>
