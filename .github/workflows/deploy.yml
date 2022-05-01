@@ -10,7 +10,7 @@ jobs:
     environment: production
     steps:
       - uses: actions/checkout@master
-      - run: npm ci
+      - run: npm i
       - run: npm run build
       - name: Copying files to server
         run: |
