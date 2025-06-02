@@ -1,6 +1,6 @@
 # VisitCard
 
-url: http://neutralmike.ru
+url: https://neutralmike.com
 
 ## Development server
 
