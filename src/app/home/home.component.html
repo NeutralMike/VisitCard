@@ -1,19 +1,25 @@
-<mat-grid-list *ngFor="let project of projects" cols="1" rowHeight="100%">
+@for (project of projects; track project) {
+  <mat-grid-list cols="1" rowHeight="100%">
     <mat-grid-tile class="project" [style.backgroundColor]="project.color">
-        <mat-grid-list cols="1">
-            <mat-tab-group class="project__images" dynamicHeight>
-                <mat-tab *ngFor="let image of project.images; index as i" label="{{i+1}}">
-                    <img
-                        class="project__image"
-                        [src]="image.url"
-                    />
-                </mat-tab>
-            </mat-tab-group>
-            <a class="project__href" [href]="project.githubUrl">
-                <img height="50" src="../../assets/images/github_logo.png" />
-                {{project.name}}
-            </a>
-            <a *ngIf="project.siteUrl" class="project__href" [href]="project.siteUrl"><img height="50" src="../../assets/images/web.png" /></a>
-        </mat-grid-list>
+      <mat-grid-list cols="1">
+        <mat-tab-group class="project__images" dynamicHeight>
+          @for (image of project.images; track image; let i = $index) {
+            <mat-tab label="{{i+1}}">
+              <img
+                class="project__image"
+                [src]="image.url"
+                />
+            </mat-tab>
+          }
+        </mat-tab-group>
+        <a class="project__href" [href]="project.githubUrl">
+          <img height="50" src="../../assets/images/github_logo.png" />
+          {{project.name}}
+        </a>
+        @if (project.siteUrl) {
+          <a class="project__href" [href]="project.siteUrl"><img height="50" src="../../assets/images/web.png" /></a>
+        }
+      </mat-grid-list>
     </mat-grid-tile>
-</mat-grid-list>
+  </mat-grid-list>
+}
