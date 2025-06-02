@@ -3,9 +3,10 @@ import { DataService } from '../services/data.service';
 import { IProject } from '../interfaces/iproject';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css'],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   projects: IProject[] = null;
