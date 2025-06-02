@@ -1,7 +1,7 @@
 <mat-grid-list *ngFor="let project of projects" cols="1" rowHeight="100%">
     <mat-grid-tile class="project" [style.backgroundColor]="project.color">
         <mat-grid-list cols="1">
-            <mat-tab-group class="project__images">
+            <mat-tab-group class="project__images" dynamicHeight>
                 <mat-tab *ngFor="let image of project.images; index as i" label="{{i+1}}">
                     <img
                         class="project__image"
